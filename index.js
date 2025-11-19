@@ -10,9 +10,11 @@ dotenv.config({ quiet: true });
 const app = express()
 const port = process.env.PORT || 3000
 
+console.log(process.env.CONNECTION_DB_DOCKER)
+
 // Configurar conexión a PostgreSQL
 const pool = new Pool({
-  connectionString: process.env.CONNECTION_DB_URL,
+  connectionString: process.env.CONNECTION_DB_DOCKER,
 })
 
 // Probar conexión
